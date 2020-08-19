@@ -32,9 +32,9 @@ const renderItem = ({item}) => (
   />
 );
 
-export default function Products() {
+const Products = () => {
   return <List style={styles.container} data={data} renderItem={renderItem} />;
-}
+};
 
 const styles = StyleSheet.create({
   icon: {
@@ -45,3 +45,5 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 });
+
+export default Products;

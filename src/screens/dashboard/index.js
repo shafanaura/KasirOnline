@@ -13,10 +13,12 @@ const DrawerNavigator = () => (
   </>
 );
 
-export default function Dashboard() {
+const Dashboard = () => {
   return (
     <React.Fragment>
       <DrawerNavigator />
     </React.Fragment>
   );
-}
+};
+
+export default Dashboard;

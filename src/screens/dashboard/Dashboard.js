@@ -11,7 +11,7 @@ import Chair from '../../assets/image/chair.svg';
 
 const MenuIcon = (props) => <Icon {...props} name="menu-2" />;
 
-export default function DashboardScreen({navigation}) {
+const DashboardScreen = ({navigation}) => {
   return (
     <View>
       <View style={styles.headerContainer}>
@@ -65,7 +65,7 @@ export default function DashboardScreen({navigation}) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -98,3 +98,5 @@ const styles = StyleSheet.create({
   },
   text: {fontFamily: 'Poppins-Regular', fontSize: 14, paddingTop: 10},
 });
+
+export default DashboardScreen;
