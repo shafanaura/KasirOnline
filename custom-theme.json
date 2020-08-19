@@ -1,4 +1,6 @@
 {
+  "color-primary-default": "$color-primary-500",
+
   "color-primary-100": "#D5FCD3",
   "color-primary-200": "#A8F9AB",
   "color-primary-300": "#79EF89",
