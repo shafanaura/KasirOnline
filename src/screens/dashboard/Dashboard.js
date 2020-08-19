@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {Text, Icon, TopNavigationAction, Layout} from '@ui-kitten/components';
 import {CardAccessoriesShowcase} from '../../components/card.component';
 
@@ -10,6 +10,16 @@ import News from '../../assets/image/news.svg';
 import Chair from '../../assets/image/chair.svg';
 
 const MenuIcon = (props) => <Icon {...props} name="menu-2" />;
+
+const IconMenu = (props) => {
+  return (
+    <View>
+      <TouchableOpacity>
+        <Text style={styles.text}>{props.title}</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 const DashboardScreen = ({navigation}) => {
   return (
@@ -22,44 +32,52 @@ const DashboardScreen = ({navigation}) => {
       </View>
       <View style={styles.container}>
         <CardAccessoriesShowcase />
+
         <View>
           <Layout style={styles.topContainer} level="1">
-            <TouchableOpacity
-              onPress={() => navigation.navigate('MenuMakanan')}>
-              <Food width="60" height="50" />
-              <Text style={styles.text}>Makanan</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
+            <View>
+              <Food
+                width="60"
+                height="50"
+                onPress={() => navigation.navigate('MenuMakanan')}
+              />
+              <IconMenu title="Makanan" />
+            </View>
+            <View>
               <Drink width="60" height="50" />
-              <Text style={styles.text}>Minuman</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
+              <IconMenu title="Minuman" />
+            </View>
+            <View>
               <User width="60" height="50" />
-              <Text style={styles.text}>Pegawaii</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
+              <IconMenu title="Pegawai" />
+            </View>
+            <View>
               <News width="60" height="50" />
-              <Text style={styles.text}>Laporan</Text>
-            </TouchableOpacity>
+              <IconMenu title="Laporan" />
+            </View>
           </Layout>
 
           <Layout style={styles.topContainer} level="1">
-            <TouchableOpacity>
-              <Chair width="60" height="50" />
-              <Text style={styles.text}>Makanan</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Food width="60" height="50" />
-              <Text style={styles.text}>Minuman</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Food width="60" height="50" />
-              <Text style={styles.text}>Pegawaii</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Food width="60" height="50" />
-              <Text style={styles.text}>Laporan</Text>
-            </TouchableOpacity>
+            <View>
+              <Food
+                width="60"
+                height="50"
+                onPress={() => navigation.navigate('MenuMakanan')}
+              />
+              <IconMenu title="Makanan" />
+            </View>
+            <View>
+              <Drink width="60" height="50" />
+              <IconMenu title="Minuman" />
+            </View>
+            <View>
+              <User width="60" height="50" />
+              <IconMenu title="Pegawai" />
+            </View>
+            <View>
+              <News width="60" height="50" />
+              <IconMenu title="Laporan" />
+            </View>
           </Layout>
         </View>
       </View>
