@@ -4,11 +4,11 @@ import {View} from 'react-native';
 import Header from './extra/header';
 import Products from './extra/products';
 
-const MenuMakanan = () => {
+const MenuMakanan = ({navigation}) => {
   return (
     <View>
-      <Header />
-      <Products />
+      <Header navigation={navigation} />
+      <Products navigation={navigation} />
     </View>
   );
 };
