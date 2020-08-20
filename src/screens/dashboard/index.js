@@ -8,7 +8,7 @@ const {Navigator, Screen} = createDrawerNavigator();
 const DrawerNavigator = () => (
   <>
     <Navigator drawerContent={(props) => <DrawerList {...props} />}>
-      <Screen name="Dashboard" component={DashboardScreen} />
+      <Screen name="DashboardScreen" component={DashboardScreen} />
     </Navigator>
   </>
 );
