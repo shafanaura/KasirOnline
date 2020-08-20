@@ -8,7 +8,7 @@ const data = new Array(12).fill({
 });
 
 const renderItemAccessory = ({navigation}) => (
-  <TouchableOpacity onPress={() => navigation.navigate('EditFood')}>
+  <TouchableOpacity onPress={() => navigation.navigate('EditMakanan')}>
     <Icon style={styles.icon} fill="#25CB5C" name="edit-2-outline" />
   </TouchableOpacity>
 );
