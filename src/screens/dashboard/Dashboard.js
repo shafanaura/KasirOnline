@@ -1,29 +1,14 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity, Image} from 'react-native';
-import {Text, Icon, TopNavigationAction, Layout} from '@ui-kitten/components';
+import {View, StyleSheet} from 'react-native';
+import {Icon, TopNavigationAction} from '@ui-kitten/components';
 import {CardAccessoriesShowcase} from '../../components/card.component';
-
-import Food from '../../assets/image/food.svg';
-import Drink from '../../assets/image/beer.svg';
-import User from '../../assets/image/user.svg';
-import News from '../../assets/image/news.svg';
-import Chair from '../../assets/image/chair.svg';
+import {IconButton} from '../../components/icon-menu.component';
 
 const MenuIcon = (props) => <Icon {...props} name="menu-2" />;
 
-const IconMenu = (props) => {
-  return (
-    <View>
-      <TouchableOpacity>
-        <Text style={styles.text}>{props.title}</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
 const DashboardScreen = ({navigation}) => {
   return (
-    <View>
+    <View navigation={navigation}>
       <View style={styles.headerContainer}>
         <TopNavigationAction
           icon={MenuIcon}
@@ -32,54 +17,7 @@ const DashboardScreen = ({navigation}) => {
       </View>
       <View style={styles.container}>
         <CardAccessoriesShowcase />
-
-        <View>
-          <Layout style={styles.topContainer} level="1">
-            <View>
-              <Food
-                width="60"
-                height="50"
-                onPress={() => navigation.navigate('MenuMakanan')}
-              />
-              <IconMenu title="Makanan" />
-            </View>
-            <View>
-              <Drink width="60" height="50" />
-              <IconMenu title="Minuman" />
-            </View>
-            <View>
-              <User width="60" height="50" />
-              <IconMenu title="Pegawai" />
-            </View>
-            <View>
-              <News width="60" height="50" />
-              <IconMenu title="Laporan" />
-            </View>
-          </Layout>
-
-          <Layout style={styles.topContainer} level="1">
-            <View>
-              <Food
-                width="60"
-                height="50"
-                onPress={() => navigation.navigate('MenuMakanan')}
-              />
-              <IconMenu title="Makanan" />
-            </View>
-            <View>
-              <Drink width="60" height="50" />
-              <IconMenu title="Minuman" />
-            </View>
-            <View>
-              <User width="60" height="50" />
-              <IconMenu title="Pegawai" />
-            </View>
-            <View>
-              <News width="60" height="50" />
-              <IconMenu title="Laporan" />
-            </View>
-          </Layout>
-        </View>
+        <IconButton navigation={navigation} />
       </View>
     </View>
   );
