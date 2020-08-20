@@ -8,7 +8,7 @@ import Ilustrator from '../../assets/image/welcome.svg';
 
 const GoogleIcon = (props) => <Icon name="google" {...props} />;
 
-export default function LandingScreen({navigation}) {
+const LandingScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -32,4 +32,6 @@ export default function LandingScreen({navigation}) {
       </View>
     </View>
   );
-}
+};
+
+export default LandingScreen;

@@ -16,9 +16,8 @@ import {StyleSheet} from 'react-native';
 const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
 const TrashIcon = (props) => <Icon {...props} name="trash-2-outline" />;
 const SaveIcon = (props) => <Icon {...props} name="save-outline" />;
-const ImageIcon = (props) => <Icon {...props} name="image-outline" />;
 
-export default function EditMakanan() {
+const EditMakanan = () => {
   const renderBackAction = () => <TopNavigationAction icon={BackIcon} />;
   const [value, setValue] = React.useState('');
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -70,7 +69,7 @@ export default function EditMakanan() {
       </View>
     </Layout>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -104,3 +103,5 @@ const styles = StyleSheet.create({
     left: 0,
   },
 });
+
+export default EditMakanan;

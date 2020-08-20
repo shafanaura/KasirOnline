@@ -1,15 +1,6 @@
 import React from 'react';
-import {
-  Divider,
-  Drawer,
-  DrawerItem,
-  Icon,
-  Avatar,
-  Text,
-  Layout,
-} from '@ui-kitten/components';
+import {Drawer, DrawerItem, Icon, Avatar, Layout} from '@ui-kitten/components';
 import {StyleSheet} from 'react-native';
-import {DrawerActions} from '@react-navigation/native';
 
 const HomeIcon = (props) => <Icon {...props} name="home-outline" />;
 
@@ -20,8 +11,6 @@ const BookmarkIcon = (props) => <Icon {...props} name="bookmark-outline" />;
 const SettingsIcon = (props) => <Icon {...props} name="settings-outline" />;
 
 const ForwardIcon = (props) => <Icon {...props} name="arrow-ios-forward" />;
-
-const CloseIcon = (props) => <Icon {...props} name="close-outline" />;
 
 const Header = () => (
   <Layout style={styles.container} level="1">

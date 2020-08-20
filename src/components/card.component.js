@@ -2,13 +2,6 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Card, Layout, Text} from '@ui-kitten/components';
 
-const Header = (props) => (
-  <View {...props}>
-    <Text category="h6">Maldives</Text>
-    <Text category="s1">By Wikipedia</Text>
-  </View>
-);
-
 const Footer = (props) => (
   <View {...props} style={[props.style, styles.footerContainer]}>
     <Text style={{fontFamily: 'Poppins-Light', fontSize: 18}}>

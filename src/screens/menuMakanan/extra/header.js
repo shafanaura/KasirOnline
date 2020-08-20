@@ -20,7 +20,7 @@ const InfoIcon = (props) => <Icon {...props} name="info" />;
 
 const LogoutIcon = (props) => <Icon {...props} name="log-out" />;
 
-export default function Header() {
+const Header = () => {
   const [menuVisible, setMenuVisible] = React.useState(false);
 
   const toggleMenu = () => {
@@ -69,7 +69,7 @@ export default function Header() {
       </TabBar>
     </Layout>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -93,3 +93,5 @@ const styles = StyleSheet.create({
     marginVertical: 24,
   },
 });
+
+export default Header;

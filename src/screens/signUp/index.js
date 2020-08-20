@@ -12,7 +12,7 @@ const useInputState = (initialValue = '') => {
   return {value, onChangeText: setValue};
 };
 
-export default function SignUpScreen({navigation}) {
+const SignUpScreen = ({navigation}) => {
   const nameInputState = useInputState();
   const titleInputState = useInputState();
   const descInputState = useInputState();
@@ -52,4 +52,6 @@ export default function SignUpScreen({navigation}) {
       </View>
     </View>
   );
-}
+};
+
+export default SignUpScreen;
