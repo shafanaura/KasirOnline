@@ -1,23 +1,12 @@
 import React from 'react';
-import {
-  Icon,
-  Layout,
-  Button,
-  Input,
-  Tab,
-  TabBar,
-  Modal,
-  Text,
-  Card,
-} from '@ui-kitten/components';
-import {StyleSheet, View} from 'react-native';
+import {Icon, Layout, Button, Input} from '@ui-kitten/components';
+import {StyleSheet, View, Text} from 'react-native';
 import {ModalList} from '../../../components/modal.component';
 
 const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
+const MenuIcon = (props) => <Icon {...props} name="more-vertical" />;
 
 export const Header = ({navigation}) => {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
   return (
     <Layout style={styles.container} level="1">
       <View style={styles.top}>
@@ -30,13 +19,6 @@ export const Header = ({navigation}) => {
         <Input width={200} placeholder="mau cari apa?" />
         <ModalList navigation={navigation} />
       </View>
-      <TabBar
-        selectedIndex={selectedIndex}
-        onSelect={(index) => setSelectedIndex(index)}>
-        <Tab title="Populer" />
-        <Tab title="Menu Utama" />
-        <Tab title="Dessert" />
-      </TabBar>
     </Layout>
   );
 };
@@ -44,17 +26,10 @@ export const Header = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    minHeight: 100,
+    minHeight: 70,
     paddingTop: 10,
-  },
-  item: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#000',
   },
   top: {
     flexDirection: 'row',
-  },
-  backdrop: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
 });

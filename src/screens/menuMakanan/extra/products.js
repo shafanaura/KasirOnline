@@ -15,10 +15,7 @@ export const Products = ({navigation}) => {
             <Text style={styles.price}>{item.price}</Text>
           </View>
         </View>
-        <Button
-          appearance="outline"
-          size="small"
-          onPress={() => navigation.navigate('EditMakanan')}>
+        <Button size="small" onPress={() => navigation.navigate('EditMakanan')}>
           Edit
         </Button>
       </ListItem>
@@ -31,9 +28,6 @@ export const Products = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-  },
   img: {
     width: 60,
     height: 60,

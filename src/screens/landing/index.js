@@ -11,25 +11,23 @@ const GoogleIcon = (props) => <Icon name="google" {...props} />;
 const LandingScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}>
-        <Logo width="105" height="105" />
-        <Ilustrator width="270" height="300" />
-        <Text
-          style={{
-            fontFamily: 'Poppins-Regular',
-            textAlign: 'center',
-            fontSize: 20,
-          }}>
-          Kelola dan pantau bisnismu dengan mudah dari satu aplikasi
-        </Text>
-        <Button
-          onPress={() => navigation.navigate('SignUp')}
-          size="giant"
-          style={styles.signInButton}
-          accessoryLeft={GoogleIcon}>
-          Masuk dengan Google
-        </Button>
-      </View>
+      <Logo width="105" height="105" />
+      <Ilustrator width="270" height="300" />
+      <Text
+        style={{
+          fontFamily: 'Poppins-Regular',
+          textAlign: 'center',
+          fontSize: 20,
+        }}>
+        Kelola dan pantau bisnismu dengan mudah dari satu aplikasi
+      </Text>
+      <Button
+        onPress={() => navigation.navigate('SignUp')}
+        size="giant"
+        style={styles.signInButton}
+        accessoryLeft={GoogleIcon}>
+        Masuk dengan Google
+      </Button>
     </View>
   );
 };

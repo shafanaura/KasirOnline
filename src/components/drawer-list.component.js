@@ -1,21 +1,35 @@
 import React from 'react';
-import {Drawer, DrawerItem, Icon, Avatar, Layout} from '@ui-kitten/components';
-import {StyleSheet} from 'react-native';
+import {ImageBackground, StyleSheet, View} from 'react-native';
+import {
+  Divider,
+  Drawer,
+  DrawerItem,
+  Icon,
+  Avatar,
+  Text,
+} from '@ui-kitten/components';
 
-const HomeIcon = (props) => <Icon {...props} name="home-outline" />;
+const PersonIcon = (props) => <Icon {...props} name="person" />;
 
-const ArchiveIcon = (props) => <Icon {...props} name="archive-outline" />;
-
-const BookmarkIcon = (props) => <Icon {...props} name="bookmark-outline" />;
-
-const SettingsIcon = (props) => <Icon {...props} name="settings-outline" />;
+const BellIcon = (props) => <Icon {...props} name="bell" />;
 
 const ForwardIcon = (props) => <Icon {...props} name="arrow-ios-forward" />;
 
-const Header = () => (
-  <Layout style={styles.container} level="1">
-    <Avatar size="large" source={require('../assets/image/avatar.png')} />
-  </Layout>
+const Header = (props) => (
+  <React.Fragment>
+    <ImageBackground style={[props.style, styles.header]}>
+      <Avatar
+        style={{marginRight: 10, marginLeft: -10}}
+        size="giant"
+        source={require('../assets/image/avatar.png')}
+      />
+      <View srtle={{flexDirection: 'row'}}>
+        <Text category="h5">Adi Aswara</Text>
+        <Text>Admin</Text>
+      </View>
+    </ImageBackground>
+    <Divider />
+  </React.Fragment>
 );
 
 export const DrawerList = () => {
@@ -27,23 +41,13 @@ export const DrawerList = () => {
       selectedIndex={selectedIndex}
       onSelect={(index) => setSelectedIndex(index)}>
       <DrawerItem
-        title="Beranda"
-        accessoryLeft={HomeIcon}
+        title="Users"
+        accessoryLeft={PersonIcon}
         accessoryRight={ForwardIcon}
       />
       <DrawerItem
-        title="Riwayat Transaksi"
-        accessoryLeft={ArchiveIcon}
-        accessoryRight={ForwardIcon}
-      />
-      <DrawerItem
-        title="Laporan"
-        accessoryLeft={BookmarkIcon}
-        accessoryRight={ForwardIcon}
-      />
-      <DrawerItem
-        title="Pengaturan"
-        accessoryLeft={SettingsIcon}
+        title="Orders"
+        accessoryLeft={BellIcon}
         accessoryRight={ForwardIcon}
       />
     </Drawer>
@@ -51,63 +55,10 @@ export const DrawerList = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    padding: 8,
-    justifyContent: 'space-between',
-  },
-  drawerContent: {
-    flex: 1,
-  },
-  userInfoSection: {
-    paddingLeft: 20,
-  },
-  title: {
-    fontSize: 16,
-    marginTop: 3,
-    fontWeight: 'bold',
-  },
-  caption: {
-    fontSize: 14,
-    lineHeight: 14,
-  },
-  row: {
-    marginTop: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  section: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginRight: '15',
-  },
-  paragraph: {
-    fontWeight: 'bold',
-    marginRight: 3,
-  },
-  drawerSection: {
-    marginTop: 15,
-  },
-  bottomDrawerSection: {
-    marginBottom: 15,
-    borderTopColor: '#F4F4F4',
-    borderTopWidth: 1,
-  },
-  preference: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-  },
   header: {
-    height: 128,
+    height: 100,
+    backgroundColor: '#F6F7F7',
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  icon: {
-    width: 32,
-    height: 32,
   },
 });

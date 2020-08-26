@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {Button, Icon, Input} from '@ui-kitten/components';
 
 import styles from './styles';
@@ -13,44 +13,42 @@ const useInputState = (initialValue = '') => {
 };
 
 const SignUpScreen = ({navigation}) => {
-  const nameInputState = useInputState();
-  const titleInputState = useInputState();
-  const descInputState = useInputState();
-
   return (
-    <View>
-      <View style={styles.headerContainer}>
-        <AvatarsPict width="200" height="140" />
-      </View>
+    <ScrollView>
       <View style={styles.container}>
-        <Input
-          style={styles.input}
-          size="large"
-          placeholder="Nama Toko"
-          {...nameInputState}
-        />
-        <Input
-          style={styles.input}
-          size="large"
-          placeholder="Pemilik Toko"
-          {...titleInputState}
-        />
-        <Input
-          multiline={true}
-          style={styles.input}
-          textStyle={{minHeight: 120}}
-          placeholder="Deskripsikan toko anda"
-          {...descInputState}
-        />
-        <Button
-          onPress={() => navigation.navigate('Dashboard')}
-          size="giant"
-          style={styles.signInButton}
-          accessoryLeft={CubeIcon}>
-          Lanjut
-        </Button>
+        <View style={styles.headerContainer}>
+          <AvatarsPict width="200" height="140" />
+        </View>
+        <View style={{padding: 20}}>
+          <Input
+            label="Nama Toko"
+            style={styles.input}
+            size="large"
+            placeholder="ex : Toko Mawar Merah"
+          />
+          <Input
+            label="Pemilik"
+            style={styles.input}
+            size="large"
+            placeholder="ex : Budi Mulya"
+          />
+          <Input
+            label="Deskripsi toko anda"
+            multiline={true}
+            style={styles.input}
+            textStyle={{minHeight: 120}}
+            placeholder="Menjual beraneka macam kebutuhan rumah dibidang properti"
+          />
+          <Button
+            onPress={() => navigation.navigate('Dashboard')}
+            size="giant"
+            style={styles.signInButton}
+            accessoryLeft={CubeIcon}>
+            Lanjut
+          </Button>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

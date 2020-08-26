@@ -21,8 +21,8 @@ const IconMenu = (props) => {
 export const IconButton = ({navigation}) => {
   return (
     <View>
-      <Layout style={styles.topContainer} level="1">
-        <View>
+      <View style={styles.container}>
+        <View style={{alignItems: 'center'}}>
           <Food
             width="60"
             height="50"
@@ -30,22 +30,22 @@ export const IconButton = ({navigation}) => {
           />
           <IconMenu title="Makanan" />
         </View>
-        <View>
+        <View style={{alignItems: 'center'}}>
           <Drink width="60" height="50" />
           <IconMenu title="Minuman" />
         </View>
-        <View>
+        <View style={{alignItems: 'center'}}>
           <User width="60" height="50" />
           <IconMenu title="Pegawai" />
         </View>
-        <View>
+        <View style={{alignItems: 'center'}}>
           <News width="60" height="50" />
           <IconMenu title="Laporan" />
         </View>
-      </Layout>
+      </View>
 
-      <Layout style={styles.topContainer2} level="1">
-        <View>
+      <View style={styles.container2}>
+        <View style={{alignItems: 'center'}}>
           <Food
             width="60"
             height="50"
@@ -53,55 +53,39 @@ export const IconButton = ({navigation}) => {
           />
           <IconMenu title="Makanan" />
         </View>
-        <View>
+        <View style={{alignItems: 'center'}}>
           <Drink width="60" height="50" />
           <IconMenu title="Minuman" />
         </View>
-        <View>
+        <View style={{alignItems: 'center'}}>
           <User width="60" height="50" />
           <IconMenu title="Pegawai" />
         </View>
-        <View>
+        <View style={{alignItems: 'center'}}>
           <News width="60" height="50" />
           <IconMenu title="Laporan" />
         </View>
-      </Layout>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFF',
-    padding: 20,
-    height: '100%',
-  },
-  headerContainer: {
-    backgroundColor: '#FFFF',
-    paddingTop: 20,
-    paddingLeft: 10,
-  },
-  signInButton: {
-    marginVertical: 15,
-    marginHorizontal: 16,
-  },
-  input: {
-    marginTop: 12,
-  },
-  profileAvatar: {
-    width: 116,
-    height: 116,
-    borderRadius: 58,
-    alignSelf: 'center',
-  },
-  topContainer: {
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-around',
   },
-  topContainer2: {
+  container2: {
+    marginTop: 30,
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-around',
-    paddingTop: 20,
   },
-  text: {fontFamily: 'Poppins-Regular', fontSize: 14, paddingTop: 10},
+  icon: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  text: {fontFamily: 'Poppins-Regular', fontSize: 12, paddingTop: 10},
 });

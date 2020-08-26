@@ -3,27 +3,17 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFF',
-    padding: 20,
-    height: '100%',
+    flex: 1,
+    justifyContent: 'space-between',
   },
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: 216,
+    minHeight: 190,
     backgroundColor: '#25CB5C',
-  },
-  signInButton: {
-    marginVertical: 15,
-    marginHorizontal: 16,
   },
   input: {
     marginTop: 12,
-  },
-  profileAvatar: {
-    width: 116,
-    height: 116,
-    borderRadius: 58,
-    alignSelf: 'center',
   },
 });
 
