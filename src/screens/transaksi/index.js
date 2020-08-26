@@ -1,10 +1,9 @@
 import React from 'react';
 import {View} from 'react-native';
-
 import {Header} from './extra/header';
 import {Products} from './extra/products';
 
-const MenuMakanan = ({navigation}) => {
+const Transaksi = ({navigation}) => {
   return (
     <View>
       <Header navigation={navigation} />
@@ -13,4 +12,4 @@ const MenuMakanan = ({navigation}) => {
   );
 };
 
-export default MenuMakanan;
+export default Transaksi;

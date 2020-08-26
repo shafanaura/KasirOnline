@@ -7,6 +7,9 @@ import SignUpScreen from '../screens/signUp';
 import Dashboard from '../screens/dashboard';
 import MenuMakanan from '../screens/menuMakanan';
 import EditMakanan from '../screens/editMakanan';
+import Transaksi from '../screens/transaksi';
+import Pembayaran from '../screens/pembayaran';
+import Nota from '../screens/nota';
 
 const {Navigator, Screen} = createStackNavigator();
 
@@ -17,6 +20,9 @@ const HomeNavigator = () => (
     <Screen name="Dashboard" component={Dashboard} />
     <Screen name="MenuMakanan" component={MenuMakanan} />
     <Screen name="EditMakanan" component={EditMakanan} />
+    <Screen name="Transaksi" component={Transaksi} />
+    <Screen name="Pembayaran" component={Pembayaran} />
+    <Screen name="Nota" component={Nota} />
   </Navigator>
 );
 

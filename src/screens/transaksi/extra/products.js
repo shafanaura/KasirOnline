@@ -4,6 +4,8 @@ import {List, ListItem, Button, Icon, Layout} from '@ui-kitten/components';
 
 import dataList from './data';
 
+const PlusIcon = (props) => <Icon {...props} name="plus" />;
+
 export const Products = ({navigation}) => {
   const renderItem = ({item, index}) => (
     <ScrollView>
@@ -15,12 +17,7 @@ export const Products = ({navigation}) => {
             <Text style={styles.price}>{item.price}</Text>
           </View>
         </View>
-        <Button
-          appearance="outline"
-          size="small"
-          onPress={() => navigation.navigate('EditMakanan')}>
-          Edit
-        </Button>
+        <Button accessoryRight={PlusIcon} size="small" />
       </ListItem>
     </ScrollView>
   );

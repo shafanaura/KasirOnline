@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Icon, TopNavigationAction} from '@ui-kitten/components';
+import {Icon, TopNavigationAction, Button, Text} from '@ui-kitten/components';
 import {CardAccessoriesShowcase} from '../../components/card.component';
 import {IconButton} from '../../components/icon-menu.component';
 
 const MenuIcon = (props) => <Icon {...props} name="menu-2" />;
+const NavigationIcon = (props) => <Icon {...props} name="navigation-2" />;
 
 const DashboardScreen = ({navigation}) => {
   return (
@@ -16,8 +17,16 @@ const DashboardScreen = ({navigation}) => {
         />
       </View>
       <View style={styles.container}>
+        <Text style={styles.text}>Senin, 17 Agustus 2020</Text>
         <CardAccessoriesShowcase />
+        <Text style={styles.text}>Menu</Text>
         <IconButton navigation={navigation} />
+        <Button
+          size="giant"
+          accessoryRight={NavigationIcon}
+          onPress={() => navigation.navigate('Transaksi')}>
+          Mulai Jualan
+        </Button>
       </View>
     </View>
   );
@@ -27,7 +36,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFF',
     padding: 20,
-    height: '100%',
+    minHeight: 570,
+    justifyContent: 'space-between',
   },
   headerContainer: {
     backgroundColor: '#FFFF',
@@ -52,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingTop: 20,
   },
-  text: {fontFamily: 'Poppins-Regular', fontSize: 14, paddingTop: 10},
+  text: {fontFamily: 'Poppins-SemiBold', fontSize: 16},
 });
 
 export default DashboardScreen;

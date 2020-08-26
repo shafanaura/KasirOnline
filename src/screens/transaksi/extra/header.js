@@ -1,12 +1,23 @@
 import React from 'react';
-import {Icon, Layout, Button, Input, Tab, TabBar} from '@ui-kitten/components';
-import {StyleSheet, View, Text} from 'react-native';
+import {
+  Icon,
+  Layout,
+  Button,
+  Input,
+  Tab,
+  TabBar,
+  Modal,
+  Text,
+  Card,
+} from '@ui-kitten/components';
+import {StyleSheet, View} from 'react-native';
+import {ModalList} from '../../../components/modal.component';
 
 const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
-const MenuIcon = (props) => <Icon {...props} name="more-vertical" />;
 
 export const Header = ({navigation}) => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
+
   return (
     <Layout style={styles.container} level="1">
       <View style={styles.top}>
@@ -17,7 +28,7 @@ export const Header = ({navigation}) => {
           onPress={() => navigation.goBack()}
         />
         <Input width={200} placeholder="mau cari apa?" />
-        <Button accessoryLeft={MenuIcon} appearance="ghost" status="basic" />
+        <ModalList navigation={navigation} />
       </View>
       <TabBar
         selectedIndex={selectedIndex}
@@ -42,5 +53,8 @@ const styles = StyleSheet.create({
   },
   top: {
     flexDirection: 'row',
+  },
+  backdrop: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
 });

@@ -44,7 +44,7 @@ export const IconButton = ({navigation}) => {
         </View>
       </Layout>
 
-      <Layout style={styles.topContainer} level="1">
+      <Layout style={styles.topContainer2} level="1">
         <View>
           <Food
             width="60"
@@ -95,6 +95,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   topContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  topContainer2: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     paddingTop: 20,
