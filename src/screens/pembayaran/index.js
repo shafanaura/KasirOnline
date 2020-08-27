@@ -7,9 +7,9 @@ import {ButtonFooter} from './extra/footer';
 const Pembayaran = ({navigation}) => {
   return (
     <React.Fragment>
-      <Header />
+      <Header navigation={navigation} />
       <Board navigation={navigation} />
-      {/* <ButtonFooter navigation={navigation} /> */}
+      <ButtonFooter navigation={navigation} />
     </React.Fragment>
   );
 };

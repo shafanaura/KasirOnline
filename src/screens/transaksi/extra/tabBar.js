@@ -10,17 +10,17 @@ export const TabBar = ({navigation}) => {
     <TabView
       selectedIndex={selectedIndex}
       onSelect={(index) => setSelectedIndex(index)}>
-      <Tab title="USERS">
+      <Tab title="Semua">
         <Layout style={styles.tabContainer}>
           <Products navigation={navigation} />
         </Layout>
       </Tab>
-      <Tab title="ORDERS">
+      <Tab title="Makanan">
         <Layout style={styles.tabContainer}>
           <Products navigation={navigation} />
         </Layout>
       </Tab>
-      <Tab title="TRANSACTIONS">
+      <Tab title="Minuman">
         <Layout style={styles.tabContainer}>
           <Products navigation={navigation} />
         </Layout>

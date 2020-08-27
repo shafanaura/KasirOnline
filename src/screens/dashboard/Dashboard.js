@@ -1,18 +1,19 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Icon, TopNavigationAction, Button, Text} from '@ui-kitten/components';
+import {Icon, Button, Text} from '@ui-kitten/components';
 import {CardAccessoriesShowcase} from '../../components/card.component';
 import {IconButton} from '../../components/icon-menu.component';
 
-const MenuIcon = (props) => <Icon {...props} name="menu-2" />;
 const NavigationIcon = (props) => <Icon {...props} name="navigation-2" />;
 
 const DashboardScreen = ({navigation}) => {
   return (
     <View navigation={navigation} style={styles.container}>
-      <TopNavigationAction
-        icon={MenuIcon}
+      <Icon
         onPress={() => navigation.openDrawer()}
+        fill="#000"
+        style={styles.icon}
+        name="menu-2"
       />
       <Text style={styles.text}>Senin, 17 Agustus 2020</Text>
       <CardAccessoriesShowcase />
@@ -36,6 +37,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   text: {fontFamily: 'Poppins-SemiBold', fontSize: 16},
+  icon: {
+    width: 30,
+    height: 30,
+  },
 });
 
 export default DashboardScreen;

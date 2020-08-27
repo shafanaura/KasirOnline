@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {Layout, Tab, TabView, Text} from '@ui-kitten/components';
 import {Products} from './products';
 
@@ -10,20 +10,20 @@ export const TabBar = ({navigation}) => {
     <TabView
       selectedIndex={selectedIndex}
       onSelect={(index) => setSelectedIndex(index)}>
-      <Tab title="USERS">
-        <Layout style={styles.tabContainer}>
+      <Tab title="Populer">
+        <View>
           <Products navigation={navigation} />
-        </Layout>
+        </View>
       </Tab>
-      <Tab title="ORDERS">
-        <Layout style={styles.tabContainer}>
+      <Tab title="Menu Utama">
+        <View>
           <Products navigation={navigation} />
-        </Layout>
+        </View>
       </Tab>
-      <Tab title="TRANSACTIONS">
-        <Layout style={styles.tabContainer}>
+      <Tab title="Dessert">
+        <View>
           <Products navigation={navigation} />
-        </Layout>
+        </View>
       </Tab>
     </TabView>
   );

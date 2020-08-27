@@ -17,19 +17,20 @@ const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
 const TrashIcon = (props) => <Icon {...props} name="trash-2-outline" />;
 const SaveIcon = (props) => <Icon {...props} name="save-outline" />;
 
-const EditMakanan = () => {
-  const renderBackAction = () => <TopNavigationAction icon={BackIcon} />;
-  const [value, setValue] = React.useState('');
+const EditMakanan = ({navigation}) => {
+  const renderBackAction = () => (
+    <TopNavigationAction icon={BackIcon} onPress={() => navigation.goBack()} />
+  );
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   return (
     <View level="1" style={styles.container}>
-      <TopNavigation
-        alignment="center"
-        title="Edit Makanan"
-        accessoryLeft={renderBackAction}
-      />
-      <View style={{padding: 10}}>
+      <View>
+        <TopNavigation
+          alignment="center"
+          title="Edit Makanan"
+          accessoryLeft={renderBackAction}
+        />
         <TouchableOpacity>
           <ImageBackground
             source={require('../../assets/image/nasigoreng.jpg')}
@@ -68,6 +69,7 @@ const EditMakanan = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10,
     flexDirection: 'column',
     justifyContent: 'space-between',
     backgroundColor: 'white',
@@ -86,8 +88,7 @@ const styles = StyleSheet.create({
   },
   button: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 10,
+    justifyContent: 'space-between',
   },
   pict: {
     width: 150,

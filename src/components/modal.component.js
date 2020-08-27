@@ -9,10 +9,10 @@ export const ModalList = ({navigation}) => {
 
   return (
     <View>
-      <Button
-        accessoryLeft={MenuIcon}
-        appearance="ghost"
-        status="basic"
+      <Icon
+        fill="#000"
+        style={styles.icon}
+        name="shopping-bag-outline"
         onPress={() => setVisible(true)}
       />
       <Modal
@@ -63,5 +63,9 @@ const styles = StyleSheet.create({
   list: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  icon: {
+    width: 32,
+    height: 32,
   },
 });

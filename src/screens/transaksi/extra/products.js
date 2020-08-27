@@ -11,30 +11,32 @@ export const Products = ({navigation}) => {
 
   const renderItem = ({item, index}) => (
     <ScrollView>
-      <ListItem style={{justifyContent: 'space-between'}}>
-        <View style={{flexDirection: 'row'}}>
-          <Image source={item.image} style={styles.img} />
-          <View>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.price}>{item.price}</Text>
+      <View style={{flexDirection: 'row'}}>
+        <ListItem style={{justifyContent: 'space-between'}}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Image source={item.image} style={styles.img} />
+            <View style={{minWidth: 180, maxWidth: 180}}>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.price}>{item.price}</Text>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+              <Icon
+                onPress={() => setCounter(counter - 1)}
+                style={styles.icon}
+                fill="#25CB5C"
+                name="minus-square"
+              />
+              <Text style={{marginHorizontal: 10}}>{counter}</Text>
+              <Icon
+                onPress={() => setCounter(counter + 1)}
+                style={styles.icon}
+                fill="#25CB5C"
+                name="plus-square"
+              />
+            </View>
           </View>
-        </View>
-        <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
-          <Icon
-            onPress={() => setCounter(counter - 1)}
-            style={styles.icon}
-            fill="#25CB5C"
-            name="minus-square"
-          />
-          <Text style={{marginHorizontal: 10}}>{counter}</Text>
-          <Icon
-            onPress={() => setCounter(counter + 1)}
-            style={styles.icon}
-            fill="#25CB5C"
-            name="plus-square"
-          />
-        </View>
-      </ListItem>
+        </ListItem>
+      </View>
     </ScrollView>
   );
 
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
   },
   icon: {
-    width: 28,
-    height: 28,
+    width: 32,
+    height: 32,
   },
 });

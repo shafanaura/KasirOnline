@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
   footerContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   footerControl: {
     marginHorizontal: 2,

@@ -1,15 +1,18 @@
 import React from 'react';
-import {
-  Icon,
-  Text,
-  TopNavigation,
-  TopNavigationAction,
-} from '@ui-kitten/components';
+import {View, Text} from 'react-native';
+import {TopNavigation, Icon, TopNavigationAction} from '@ui-kitten/components';
 
-const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
+export const Header = ({navigation}) => {
+  const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
 
-const BackAction = () => <TopNavigationAction icon={BackIcon} />;
-
-export const Header = () => (
-  <TopNavigation accessoryLeft={BackAction} title="Pembayaran" />
-);
+  const renderBackAction = () => (
+    <TopNavigationAction icon={BackIcon} onPress={() => navigation.goBack()} />
+  );
+  return (
+    <TopNavigation
+      alignment="center"
+      title="Pembayaran"
+      accessoryLeft={renderBackAction}
+    />
+  );
+};

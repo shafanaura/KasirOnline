@@ -1,13 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Button} from '@ui-kitten/components';
+import {StyleSheet, View} from 'react-native';
+import {Text, Button} from '@ui-kitten/components';
 
 export const ButtonFooter = ({navigation}) => {
   return (
     <View style={styles.footer}>
       <View style={styles.footer2}>
-        <Text>Kembalian</Text>
-        <Text>Rp 40.000</Text>
+        <Text category="h6" style={styles.text}>
+          Kembalian
+        </Text>
+        <Text category="h6" style={styles.text}>
+          Rp 40.000
+        </Text>
       </View>
       <Button onPress={() => navigation.navigate('Nota')}>Simpan</Button>
     </View>
@@ -16,8 +20,9 @@ export const ButtonFooter = ({navigation}) => {
 
 const styles = StyleSheet.create({
   footer: {
-    padding: 20,
+    backgroundColor: 'white',
     position: 'absolute',
+    padding: 10,
     left: 0,
     right: 0,
     bottom: 0,
@@ -25,5 +30,8 @@ const styles = StyleSheet.create({
   footer2: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  text: {
+    fontFamily: 'Poppins-SemiBold',
   },
 });

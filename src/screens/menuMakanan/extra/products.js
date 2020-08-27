@@ -10,7 +10,7 @@ export const Products = ({navigation}) => {
       <ListItem style={{justifyContent: 'space-between'}}>
         <View style={{flexDirection: 'row'}}>
           <Image source={item.image} style={styles.img} />
-          <View>
+          <View style={{minWidth: 180, maxWidth: 180}}>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.price}>{item.price}</Text>
           </View>

@@ -1,22 +1,19 @@
 import React from 'react';
-import {Icon, Layout, Button, Input} from '@ui-kitten/components';
-import {StyleSheet, View, Text} from 'react-native';
+import {Icon, Layout, Input} from '@ui-kitten/components';
+import {StyleSheet, View} from 'react-native';
 import {ModalList} from '../../../components/modal.component';
-
-const BackIcon = (props) => <Icon {...props} name="arrow-back" />;
-const MenuIcon = (props) => <Icon {...props} name="more-vertical" />;
 
 export const Header = ({navigation}) => {
   return (
     <Layout style={styles.container} level="1">
       <View style={styles.top}>
-        <Button
-          accessoryLeft={BackIcon}
-          appearance="ghost"
-          status="basic"
+        <Icon
           onPress={() => navigation.goBack()}
+          fill="#000"
+          style={styles.icon}
+          name="arrow-back"
         />
-        <Input width={200} placeholder="mau cari apa?" />
+        <Input minWidth={200} placeholder="mau cari apa?" />
         <ModalList navigation={navigation} />
       </View>
     </Layout>
@@ -31,5 +28,12 @@ const styles = StyleSheet.create({
   },
   top: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
+    alignItems: 'center',
+  },
+  icon: {
+    width: 25,
+    height: 25,
   },
 });
