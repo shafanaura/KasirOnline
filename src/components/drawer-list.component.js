@@ -24,7 +24,7 @@ const Header = (props) => (
         source={require('../assets/image/avatar.png')}
       />
       <View srtle={{flexDirection: 'row'}}>
-        <Text category="h6">Adi Aswara</Text>
+        <Text category="h6">Shafa Naura</Text>
         <Text>Admin</Text>
       </View>
     </ImageBackground>
